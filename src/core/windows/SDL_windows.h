@@ -30,8 +30,10 @@
 #ifndef UNICODE
 #define UNICODE 1
 #endif
+#if !defined(_WIN32_WINNT) || _WIN32_WINNT < 0x501
 #undef _WIN32_WINNT
 #define _WIN32_WINNT  0x501   /* Need 0x410 for AlphaBlend() and 0x500 for EnumDisplayDevices(), 0x501 for raw input */
+#endif
 #endif
 
 #include <windows.h>
